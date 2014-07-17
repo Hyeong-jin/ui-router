@@ -249,13 +249,10 @@ myApp.config(function($stateProvider) {
 
 없다면, 문제점을 재현할 수 있는 [plunkr 생성](http://plnkr.co/edit/u18KQc?p=preview)합니다(가능하면 적은 양의 코드를 작성하세요: 적으면 적을 수록 더욱 빨리 문제를 해결할 수 있습니다.)
 
-Next, [create a new issue](https://github.com/angular-ui/ui-router/issues/new) that briefly explains the problem,
-and provides a bit of background as to the circumstances that triggered it. Don't forget to include the link to
-that plunkr you created!
 다음으로, 문제를 간략하게 설명하는 [새로운 이슈를 생성](https://github.com/angular-ui/ui-router/issues/new)하고, 
-문제를 발생시키는 상황 같은 백그라운드를 약간 제공합니다. 
+문제를 발생시키는 상황 같은 백그라운드를 약간 제공합니다. 잊지 말고 생성한 plunkr의 링크를 포함합니다.
 
-**Note**: 만약 
+**Note**: 
 If you're unsure how a feature is used, or are encountering some unexpected behavior that you aren't sure
 is a bug, it's best to talk it out in the
 [Google Group](https://groups.google.com/forum/#!categories/angular-ui/router) or on
