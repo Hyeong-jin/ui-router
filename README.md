@@ -21,7 +21,7 @@ URL 라우트 중심으로 구성되어 있는 Angular ngRoute 모듈의 [`$rout
 UI-Router는 [*states*](https://github.com/angular-ui/ui-router/wiki)중심으로 구성되었다, 
 이것은 라우트뿐 아니라, 선택적인 다른 동작도 첨부되어 있다.
 
-스테이트는 *named*, *nested*, *parallel views*에 묶여서, 애플리케이션의 인터페이스를 강력하게 관리할 수 있게 한다.
+스테이트는 *명명된*, *중첩된*, *병렬 뷰*에 묶여서, 애플리케이션의 인터페이스를 강력하게 관리할 수 있게 한다.
 
 샘플 앱을 보라: <http://angular-ui.github.io/ui-router/sample/>
 
