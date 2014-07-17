@@ -1,6 +1,6 @@
 # AngularUI Router &nbsp;[![Build Status](https://travis-ci.org/angular-ui/ui-router.png?branch=master)](https://travis-ci.org/angular-ui/ui-router)
 
-#### The de-facto solution to flexible routing with nested views
+#### 중첩된 뷰에서의 유연한 라우팅에 대한 사실상의 솔루션 
 ---
 **[Download 0.2.10](http://angular-ui.github.io/ui-router/release/angular-ui-router.js)** (or **[Minified](http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js)**) **|**
 **[Guide](https://github.com/angular-ui/ui-router/wiki) |**
@@ -15,34 +15,34 @@
 
 ---
 
-AngularUI Router is a routing framework for [AngularJS](http://angularjs.org), which allows you to organize the
-parts of your interface into a [*state machine*](https://en.wikipedia.org/wiki/Finite-state_machine). Unlike the
-[`$route` service](http://docs.angularjs.org/api/ngRoute.$route) in the Angular ngRoute module, which is organized around URL
-routes, UI-Router is organized around [*states*](https://github.com/angular-ui/ui-router/wiki),
-which may optionally have routes, as well as other behavior, attached.
+AngularUI 라우터는 [AngularJS](http://angularjs.org)를 위한 라우팅 프레임워크이다. 이것은 당신이 당신의 인터페이스의 부분을
+[*상태 기계*](https://en.wikipedia.org/wiki/Finite-state_machine)로 구성할 수 있게 한다. 
+URL 라우트 중심으로 구성되어 있는 Angular ngRoute 모듈의 [`$route` service](http://docs.angularjs.org/api/ngRoute.$route)와 달리, 
+UI-Router는 [*states*](https://github.com/angular-ui/ui-router/wiki)중심으로 구성되었다, 
+이것은 라우트뿐 아니라, 선택적인 다른 동작도 첨부되어 있다.
 
-States are bound to *named*, *nested* and *parallel views*, allowing you to powerfully manage your application's interface.
+상태는 *named*, *nested*, *parallel views*에 묶여서, 애플리케이션의 인터페이스를 강력하게 관리할 수 있게 한다.
 
-Check out the sample app: http://angular-ui.github.io/ui-router/sample/
+샘플 앱을 보라: <http://angular-ui.github.io/ui-router/sample/>
 
 -
-**Note:** *UI-Router is under active development. As such, while this library is well-tested, the API may change. Consider using it in production applications only if you're comfortable following a changelog and updating your usage accordingly.*
+**참고:** *UI-Router는 한창 개발 중이다. 이 라이브러리는 잘 테스트하고 있는 중이라서, API가 바뀔 수 있다. 양산 애플리케이션에서의 사용은 변경로그를 팔로윙하여 그에 따라 당신이 사용하는 것을 업데이트하는 것에 익숙한가 숙고하여 사용하라.*
 
 
-## Get Started
+## 시작하기
 
-**(1)** Get UI-Router in one of 4 ways:
- - clone & [build](#developing) this repository
- - [download the release](http://angular-ui.github.io/ui-router/release/angular-ui-router.js) (or [minified](http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js))
- - via **[Bower](http://bower.io/)**: by running `$ bower install angular-ui-router` from your console
- - or via **[npm](https://www.npmjs.org/)**: by running `$ npm install angular-ui-router` from your console
- - or via **[Component](https://github.com/component/component)**: by running `$ component install angular-ui/ui-router` from your console
+**(1)** 다음의 4가지 방법 중 하나로 UI-Router를 얻는다:
+ - 이 저장소를 클론 하여 [빌드](#developing)한다.
+ - [릴리즈](http://angular-ui.github.io/ui-router/release/angular-ui-router.js)(아니면 [최소화 버전](http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js))를 내려받는다.
+ - **[Bower](http://bower.io/)**: 콘솔 창에서 `$ bower install angular-ui-router` 명령을 실행하여 얻는다.
+ - 아니면 **[npm](https://www.npmjs.org/)**: 콘솔 창에서 `$ npm install angular-ui-router` 명령을 실행하여 얻는다.
+ - 아니면 **[Component](https://github.com/component/component)**: 콘솔 창에서 `$ component install angular-ui/ui-router` 명령을 실행하여 얻는다.
 
-**(2)** Include `angular-ui-router.js` (or `angular-ui-router.min.js`) in your `index.html`, after including Angular itself (For Component users: ignore this step)
+**(2)** `angular-ui-router.js` (아니면 `angular-ui-router.min.js`)를 당신의 `index.html`에 포함하고, 다음으로 Angular 자체를 포함한다 (컴포넌트 사용자는: 이단계를 건너뛴다).
 
-**(3)** Add `'ui.router'` to your main module's list of dependencies (For Component users: replace `'ui.router'` with `require('angular-ui-router')`)
+**(3)** `'ui.router'`를 당신의 메인 모듈의 의존성 목록에 추가한다 (컴포넌트 사용자는: `'ui.router'`를 `require('angular-ui-router')`로 대체한다)
 
-When you're done, your setup should look similar to the following:
+모든 과정을 마치면, 다음과 비슷할 것이다.
 
 >
 ```html
@@ -53,7 +53,7 @@ When you're done, your setup should look similar to the following:
     <script src="js/angular-ui-router.min.js"></script>
     <script>
         var myApp = angular.module('myApp', ['ui.router']);
-        // For Component users, it should look like this:
+        // 컴포넌트 사용자는, 다음 코드를 사용한다:
         // var myApp = angular.module('myApp', [require('angular-ui-router')]);
     </script>
     ...
@@ -64,26 +64,28 @@ When you're done, your setup should look similar to the following:
 </html>
 ```
 
-### [Nested States & Views](http://plnkr.co/edit/u18KQc?p=preview)
+### [중복된 상태와 뷰](http://plnkr.co/edit/u18KQc?p=preview)
 
-The majority of UI-Router's power is in its ability to nest states & views.
+UI-Router의 강점은 중첩된 상태와 뷰에 대한 능력이다.
 
-**(1)** First, follow the [setup](#get-started) instructions detailed above.
+**(1)** 먼저, 위에서 자세히 설명한 [setup](#get-started) 지침을 따른다.
 
-**(2)** Then, add a [`ui-view` directive](https://github.com/angular-ui/ui-router/wiki/Quick-Reference#ui-view) to the `<body />` of your app.
+**(2)** 다음으로, [`ui-view` 디렉티브](https://github.com/angular-ui/ui-router/wiki/Quick-Reference#ui-view)를 앱의 '<body />' 태그에 추가한다.
 
 >
 ```html
 <!-- index.html -->
 <body>
     <div ui-view></div>
-    <!-- We'll also add some navigation: -->
+    <!-- 몇 개의 네비게이션을 추가한다: -->
     <a ui-sref="state1">State 1</a>
     <a ui-sref="state2">State 2</a>
 </body>
 ```
 
 **(3)** You'll notice we also added some links with [`ui-sref` directives](https://github.com/angular-ui/ui-router/wiki/Quick-Reference#ui-sref). In addition to managing state transitions, this directive auto-generates the `href` attribute of the `<a />` element it's attached to, if the corresponding state has a URL. Next we'll add some templates. These will plug into the `ui-view` within `index.html`. Notice that they have their own `ui-view` as well! That is the key to nesting states and views.
+
+**(3)** 당신은 우리가 [`ui-sref` 디렉티브](https://github.com/angular-ui/ui-router/wiki/Quick-Reference#ui-sref)를 가진 몇 개의 링크를 추가한 것에 주목할 것이다. 상태 전환 관리에 대한 추가에서, 상응하는 상태가 URL을 가지고 있다면, 이 디렉티브는 `<a />` 엘리먼트의 `href` 속성을 자동으로 생성한다. 다음으로 우리는 몇 개의 템플릿을 추가한다. 이것은 `index.html`가 가진 `ui-view` 안으로 삽입될 것이다. 기억할 것은 그들이 그들만의 `ui-view`를 가지고 있다는 것이다! 이것이 중첩하는 상태와 뷰의 키이다.
 
 >
 ```html
@@ -101,7 +103,7 @@ The majority of UI-Router's power is in its ability to nest states & views.
 <div ui-view></div>
 ```
 
-**(4)** Next, we'll add some child templates. *These* will get plugged into the `ui-view` of their parent state templates.
+**(4)** 다음으로, 우리는 몇 가지 하위 템플릿을 추가할 것이다. 이것은 그들의 부모 상태 템플릿의 `ui-view`안으로 삽입될 것이다.
 
 >
 ```html
@@ -121,17 +123,16 @@ The majority of UI-Router's power is in its ability to nest states & views.
 </ul>
 ```
 
-**(5)** Finally, we'll wire it all up with `$stateProvider`. Set up your states in the module config, as in the following:
-
+**(5)** 마지막으로, 우리는 `$stateProvider`을 가지고 모두를 묶을 것이다. 다음과 같이, 모듈 구성에서 상태를 설정한다:
 
 >
 ```javascript
 myApp.config(function($stateProvider, $urlRouterProvider) {
   //
-  // For any unmatched url, redirect to /state1
+  // 매칭되지 않는 모든 url은 `/state1` 로 경로를 바꾼다.
   $urlRouterProvider.otherwise("/state1");
   //
-  // Now set up the states
+  // 이제 상태를 설정한다.
   $stateProvider
     .state('state1', {
       url: "/state1",
@@ -158,23 +159,24 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
     });
 ```
 
-**(6)** See this quick start example in action.
->**[Go to Quick Start Plunker for Nested States & Views](http://plnkr.co/edit/u18KQc?p=preview)**
+**(6)** 퀵 스타트 예제를 만져 보라.
+>**[중복된 상태와 뷰를 위한 퀵 스타트 Plunker로 가기](http://plnkr.co/edit/u18KQc?p=preview)**
 
-**(7)** This only scratches the surface
->**[Dive Deeper!](https://github.com/angular-ui/ui-router/wiki)**
+**(7)** 이것은 단지 수박 겉 핱기이다.
+>**[깊이 들어가 알아 보자!](https://github.com/angular-ui/ui-router/wiki)**
 
 
-### [Multiple & Named Views](http://plnkr.co/edit/SDOcGS?p=preview)
+### [복수의 명명된 뷰](http://plnkr.co/edit/SDOcGS?p=preview)
 
-Another great feature is the ability to have multiple `ui-view`s view per template.
+또 다른 대단한 특징은 템플릿 당 복수의 `ui-view`를 볼 수 있는 능력이다. 
 
-**Pro Tip:** *While multiple parallel views are a powerful feature, you'll often be able to manage your
-interfaces more effectively by nesting your views, and pairing those views with nested states.*
+**Pro Tip:** **
 
-**(1)** Follow the [setup](#get-started) instructions detailed above.
+*복수의 병렬 뷰는 강력한 특징이라서, 당신은 당신의 뷰를 중첩해서 당신의 인터페이스를 더욱 효과적으로 관리하고, 중첩된 스테이트와 짝지을 수 있습니다.*
 
-**(2)** Add one or more `ui-view` to your app, give them names.
+**(1)** 위에서 설명한 [설정](#get-started) 지침을 따른다.
+
+**(2)** 하나 이상의  `ui-view`를 당신의 앱에 추가하고 이름을 짓는다.
 >
 ```html
 <!-- index.html -->
@@ -187,7 +189,7 @@ interfaces more effectively by nesting your views, and pairing those views with 
 </body>
 ```
 
-**(3)** Set up your states in the module config:
+**(3)** 모듈 구성에 당신의 상태를 설정한다:
 >
 ```javascript
 myApp.config(function($stateProvider) {
@@ -216,8 +218,8 @@ myApp.config(function($stateProvider) {
 });
 ```
 
-**(4)** See this quick start example in action.
->**[Go to Quick Start Plunker for Multiple & Named Views](http://plnkr.co/edit/SDOcGS?p=preview)**
+**(4)** 퀵 스타트 예제를 만져보라.
+>**[복수의 명명된 뷰를 위한 퀵 스타트 Plunker로 가기](http://plnkr.co/edit/SDOcGS?p=preview)**
 
 
 ## Resources
