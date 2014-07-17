@@ -163,7 +163,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 >**[중복된 상태와 뷰를 위한 퀵 스타트 Plunker로 가기](http://plnkr.co/edit/u18KQc?p=preview)**
 
 **(7)** 이것은 단지 수박 겉 핱기이다.
->**[깊이 들어가 알아 보자!](https://github.com/angular-ui/ui-router/wiki)**
+>**[깊이 들어가 보자!](https://github.com/angular-ui/ui-router/wiki)**
 
 
 ### [복수의 명명된 뷰](http://plnkr.co/edit/SDOcGS?p=preview)
@@ -177,6 +177,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 **(1)** 위에서 설명한 [설정](#get-started) 지침을 따른다.
 
 **(2)** 하나 이상의  `ui-view`를 당신의 앱에 추가하고 이름을 짓는다.
+
 >
 ```html
 <!-- index.html -->
