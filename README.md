@@ -66,7 +66,7 @@ UI-Router는 [*states*](https://github.com/angular-ui/ui-router/wiki)중심으�
 </html>
 ```
 
-### [중복된 상태와 뷰](http://plnkr.co/edit/u18KQc?p=preview)
+### [중복된 스테이트와 뷰](http://plnkr.co/edit/u18KQc?p=preview)
 
 UI-Router의 강점은 중첩된 스테이트와 뷰에 대한 능력이다.
 
@@ -89,7 +89,7 @@ UI-Router의 강점은 중첩된 스테이트와 뷰에 대한 능력이다.
 스테이트 전환 관리에 대한 추가에서, 상응하는 스테이트가 URL을 가지고 있다면, 이 디렉티브는 `<a />` 엘리먼트의 `href` 속성을 자동으로 생성한다.
 다음으로 우리는 몇 개의 템플릿을 추가한다. 
 이것은 `index.html`가 가진 `ui-view` 안으로 삽입 될 것이다. 
-기억할 것은 그들이 그들만의 `ui-view`를 가지고 있다는 것이다! 이것이 중첩하는 상태와 뷰의 핵심이다.
+기억할 것은 그들이 그들만의 `ui-view`를 가지고 있다는 것이다! 이것이 중첩하는 스테이트와 뷰의 핵심이다.
 
 >
 ```html
@@ -107,7 +107,7 @@ UI-Router의 강점은 중첩된 스테이트와 뷰에 대한 능력이다.
 <div ui-view></div>
 ```
 
-**(4)** 다음으로, 우리는 몇 가지 하위 템플릿을 추가할 것이다. 이것은 그들의 부모 상태 템플릿의 `ui-view`안으로 삽입될 것이다.
+**(4)** 다음으로, 우리는 몇 가지 하위 템플릿을 추가할 것이다. 이것은 그들의 부모 스테이트 템플릿의 `ui-view`안으로 삽입될 것이다.
 
 >
 ```html
@@ -127,7 +127,7 @@ UI-Router의 강점은 중첩된 스테이트와 뷰에 대한 능력이다.
 </ul>
 ```
 
-**(5)** 마지막으로, 우리는 `$stateProvider`을 가지고 모두를 묶을 것이다. 다음과 같이, 모듈 구성에서 상태를 설정한다:
+**(5)** 마지막으로, 우리는 `$stateProvider`을 가지고 모두를 묶을 것이다. 다음과 같이, 모듈 구성에서 스테이트를 설정한다:
 
 >
 ```javascript
@@ -136,7 +136,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
   // 매칭되지 않는 모든 url은 `/state1` 로 경로를 바꾼다.
   $urlRouterProvider.otherwise("/state1");
   //
-  // 이제 상태를 설정한다.
+  // 이제 스테이트를 설정한다.
   $stateProvider
     .state('state1', {
       url: "/state1",
@@ -164,7 +164,7 @@ myApp.config(function($stateProvider, $urlRouterProvider) {
 ```
 
 **(6)** 퀵 스타트 예제를 만져 보라.
->**[중복된 상태와 뷰를 위한 퀵 스타트 Plunker로 가기](http://plnkr.co/edit/u18KQc?p=preview)**
+>**[중복된 스테이트와 뷰를 위한 퀵 스타트 Plunker로 가기](http://plnkr.co/edit/u18KQc?p=preview)**
 
 **(7)** 이것은 단지 수박 겉 핱기이다.
 >**[깊이 들어가 보자!](https://github.com/angular-ui/ui-router/wiki)**
