@@ -70,7 +70,7 @@ UI-Router의 강점은 중첩된 상태와 뷰에 대한 능력이다.
 
 **(1)** 먼저, 위에서 자세히 설명한 [setup](#get-started) 지침을 따른다.
 
-**(2)** 다음으로, [`ui-view` 디렉티브](https://github.com/angular-ui/ui-router/wiki/Quick-Reference#ui-view)를 앱의 '<body />' 태그에 추가한다.
+**(2)** 다음으로, [`ui-view` 디렉티브](https://github.com/angular-ui/ui-router/wiki/Quick-Reference#ui-view)를 앱의 `<body />` 태그에 추가한다.
 
 >
 ```html
