@@ -244,18 +244,19 @@ myApp.config(function($stateProvider) {
 
 ## Report an Issue
 
-Help us make UI-Router better! If you think you might have found a bug, or some other weirdness, start by making sure
-it hasn't already been reported. You can [search through existing issues](https://github.com/angular-ui/ui-router/search?q=wat%3F&type=Issues)
-to see if someone's reported one similar to yours.
+더 좋은 UI-Router를 만들도록 우리를 도와주세요! 버그나 이상한 것을 찾았다고 생각한다면, 그것이 이미 리포팅된 것이 아닌지 확인해 주세요. 
+[기존의 이슈 찾기](https://github.com/angular-ui/ui-router/search?q=wat%3F&type=Issues)에서 리포팅된 비슷한 것을 찾을 수 있습니다.
 
-If not, then [create a plunkr](http://plnkr.co/edit/u18KQc?p=preview) that demonstrates the problem (try to use as little code
-as possible: the more minimalist, the faster we can debug it).
+없다면, 문제점을 재현할 수 있는 [plunkr 생성](http://plnkr.co/edit/u18KQc?p=preview)합니다(가능하면 적은 양의 코드를 작성하세요: 적으면 적을 수록 더욱 빨리 문제를 해결할 수 있습니다.)
 
 Next, [create a new issue](https://github.com/angular-ui/ui-router/issues/new) that briefly explains the problem,
 and provides a bit of background as to the circumstances that triggered it. Don't forget to include the link to
 that plunkr you created!
+다음으로, 문제를 간략하게 설명하는 [새로운 이슈를 생성](https://github.com/angular-ui/ui-router/issues/new)하고, 
+문제를 발생시키는 상황 같은 백그라운드를 약간 제공합니다. 
 
-**Note**: If you're unsure how a feature is used, or are encountering some unexpected behavior that you aren't sure
+**Note**: 만약 
+If you're unsure how a feature is used, or are encountering some unexpected behavior that you aren't sure
 is a bug, it's best to talk it out in the
 [Google Group](https://groups.google.com/forum/#!categories/angular-ui/router) or on
 [StackOverflow](http://stackoverflow.com/questions/ask?tags=angularjs,angular-ui-router) before reporting it. This
