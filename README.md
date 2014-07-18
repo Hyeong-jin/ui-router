@@ -1,6 +1,6 @@
 # AngularUI Router &nbsp;[![Build Status](https://travis-ci.org/angular-ui/ui-router.png?branch=master)](https://travis-ci.org/angular-ui/ui-router)
 
-#### 중첩된 뷰에서의 유연한 라우팅에 대한 사실상의 솔루션 
+#### 중첩된 뷰에서 유연한 라우팅을 위한 사실상의 솔루션 
 ---
 **[Download 0.2.10](http://angular-ui.github.io/ui-router/release/angular-ui-router.js)** (or **[Minified](http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js)**) **|**
 **[Guide](https://github.com/angular-ui/ui-router/wiki) |**
