@@ -11,23 +11,22 @@ angular.module('uiRouterSample.contacts', [
         //////////////
         .state('contacts', {
 
-          // With abstract set to true, that means this state can not be explicitly activated.
-          // It can only be implicitly activated by activating one of it's children.
+          // abstract를 true로 설정하는 것은, 스테이트가 명시적으로 활성화될 수 없음을 의미합니다. 
+          // 이것은 이것의 하위의 것이 활성화됨에 의해서만 암시적으로 활성화될 수 있습니다.
           abstract: true,
 
-          // This abstract state will prepend '/contacts' onto the urls of all its children.
+          // 이 추상 스테이트는 모든 자손의 url 앞에 '/contacts'가 붙여질 것입니다.
           url: '/contacts',
 
-          // Example of loading a template from a file. This is also a top level state,
-          // so this template file will be loaded and then inserted into the ui-view
-          // within index.html.
+          // 파일에서 템플릿을 로딩하는 예제. 이것은 또한 최상위 스테이트이라서
+          // 이 템플릿 파일은 로드되고 나면 index.html 의 ui-view안으로 
+          // 삽입되어질 것입니다.
           templateUrl: 'app/contacts/contacts.html',
 
-          // Use `resolve` to resolve any asynchronous controller dependencies
-          // *before* the controller is instantiated. In this case, since contacts
-          // returns a promise, the controller will wait until contacts.all() is
-          // resolved before instantiation. Non-promise return values are considered
-          // to be resolved immediately.
+          // `resolve` 는 모든 비동기 컨트롤러 의존성을 컨트롤러가 초기화되기 
+          // *전에* 해결하기 위해 사용한다. 이 경우에, contact가 promise를 반환하기 때문에, 
+          // 컨트롤러는 객체화 전에 contacts.all() 이 해결될 때 까지 기다릴 것이다. 
+          // non-promise의 반환 값는 즉시 해결된 것으로 간주한다.
           resolve: {
             contacts: ['contacts',
               function( contacts){
@@ -35,21 +34,22 @@ angular.module('uiRouterSample.contacts', [
               }]
           },
 
-          // You can pair a controller to your template. There *must* be a template to pair with.
+          // 당신은 컨트롤러를 템플릿과 짝지을 수 있다. *반드시* 짝지을 템플릿이 있어야 한다.
           controller: ['$scope', '$state', 'contacts', 'utils',
             function (  $scope,   $state,   contacts,   utils) {
 
-              // Add a 'contacts' field in this abstract parent's scope, so that all
-              // child state views can access it in their scopes. Please note: scope
-              // inheritance is not due to nesting of states, but rather choosing to
-              // nest the templates of those states. It's normal scope inheritance.
+              // 'contacts' 필드를 이 추상적인 부모의 스코프에 추가한다, 그래야 
+              // 모든 서브 스테이트 뷰가 그들의 스코프에서 이것을 접근할 수 있다.
+              // 스코프의 상속은 스테이트를 중첩하는 것이라기 보다는 
+              // 중첩할 스코프의 템플릿을 선택하는 것이라는 것을 꼭 기억하자.
+              // 정상 스코프를 상속한다. 
               $scope.contacts = contacts;
 
               $scope.goToRandom = function () {
                 var randId = utils.newRandomKey($scope.contacts, "id", $state.params.contactId);
 
-                // $state.go() can be used as a high level convenience method
-                // for activating a state programmatically.
+                // $state.go()는 스테이트를 프로그램적으로 활성화하기 위해서 
+                // 상위의 편리한 메소드처럼 사용된다.
                 $state.go('contacts.detail', { contactId: randId });
               };
             }]
@@ -59,20 +59,18 @@ angular.module('uiRouterSample.contacts', [
         // Contacts > List //
         /////////////////////
 
-        // Using a '.' within a state name declares a child within a parent.
-        // So you have a new state 'list' within the parent 'contacts' state.
+        // 부모를 가진 자식의 스테이트 이름을 정의에서 '.'를 사용한다.
+        // 그래서 당신은 'contacts' 상태를 부모로하는 새로운 'list' 스테이트를 가진다.
         .state('contacts.list', {
 
-          // Using an empty url means that this child state will become active
-          // when its parent's url is navigated to. Urls of child states are
-          // automatically appended to the urls of their parent. So this state's
-          // url is '/contacts' (because '/contacts' + '').
+          // 비어있는 url의 사용은 부모의 url이 네비게이션될 때 자식 스테이트가 활성화 될 것을 의미한다.
+          // 자식 스테이트의 url은 자동적으로 그들의 부모의 url에 이어 붙여질 것이다. 
+          // 그래서 이 스테이트의 url은 '/contacts'(왜냐하면 '/contacts' + '')이다.
           url: '',
 
-          // IMPORTANT: Now we have a state that is not a top level state. Its
-          // template will be inserted into the ui-view within this state's
-          // parent's template; so the ui-view within contacts.html. This is the
-          // most important thing to remember about templates.
+          // 중요: 이제 우리는 최상위 스테이트가 아닌 스테이트를 가졌다. 
+          // 이 템플릿은 이 스테이트의 부모의 템플릿의 ui-view에 삽입될 것이다;
+          // 따라서 contacts.html의 ui-view이다.
           templateUrl: 'app/contacts/contacts.list.html'
         })
 

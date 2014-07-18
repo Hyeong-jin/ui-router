@@ -3,15 +3,13 @@
   <ul>
     <li ng-repeat="item in contact.items">
 
-      <!-- Here's another ui-sref except THIS time we are passing parameters
-           AND inheriting parameters from active ancestor states. So we don't
-           need to resupply the contactId parameter. -->
+      <!-- 여기에 다른 ui-sref가 있다. 이 번에는 인자와 상위 스테이트에서 상속된 인자를 넘겨준다.
+           그래서 우리는 contactId 인자를 제공할 필요가 없다. -->
       <a ui-sref="contacts.detail.item({itemId:item.id})">{{item.type}}</a>
     </li>
   </ul>
   <div ui-view class="slide">
-    <!-- Example of default content. This content will be replace as soon as
-         this ui-view is populate with a template -->
+    <!-- 기본 컨텐트 예제. 이 컨텐트는 ui-view가 채워지면 바로 템플릿으로 바꾸어질 것이다. -->
     <small class="muted">Click on a contact item to view and/or edit it.</small>
   </div>
 </div>

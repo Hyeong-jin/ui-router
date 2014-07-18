@@ -93,38 +93,38 @@ UI-Router의 강점은 중첩된 스테이트와 뷰에 대한 능력이다.
 
 >
 ```html
-<!-- partials/state1.html -->
-<h1>State 1</h1>
-<hr/>
-<a ui-sref="state1.list">Show List</a>
-<div ui-view></div>
+	<!-- partials/state1.html -->
+	<h1>State 1</h1>
+	<hr/>
+	<a ui-sref="state1.list">Show List</a>
+	<div ui-view></div>
 ```
 ```html
-<!-- partials/state2.html -->
-<h1>State 2</h1>
-<hr/>
-<a ui-sref="state2.list">Show List</a>
-<div ui-view></div>
+	<!-- partials/state2.html -->
+	<h1>State 2</h1>
+	<hr/>
+	<a ui-sref="state2.list">Show List</a>
+	<div ui-view></div>
 ```
 
 **(4)** 다음으로, 우리는 몇 가지 하위 템플릿을 추가할 것이다. 이것은 그들의 부모 스테이트 템플릿의 `ui-view`안으로 삽입될 것이다.
 
 >
 ```html
-<!-- partials/state1.list.html -->
-<h3>List of State 1 Items</h3>
-<ul>
-  <li ng-repeat="item in items">{{ item }}</li>
-</ul>
+	<!-- partials/state1.list.html -->
+	<h3>List of State 1 Items</h3>
+	<ul>
+	  <li ng-repeat="item in items">{{ item }}</li>
+	</ul>
 ```
 
 >
 ```html
-<!-- partials/state2.list.html -->
-<h3>List of State 2 Things</h3>
-<ul>
-  <li ng-repeat="thing in things">{{ thing }}</li>
-</ul>
+	<!-- partials/state2.list.html -->
+	<h3>List of State 2 Things</h3>
+	<ul>
+	  <li ng-repeat="thing in things">{{ thing }}</li>
+	</ul>
 ```
 
 **(5)** 마지막으로, 우리는 `$stateProvider`을 가지고 모두를 묶을 것이다. 다음과 같이, 모듈 구성에서 스테이트를 설정한다:
@@ -229,11 +229,11 @@ myApp.config(function($stateProvider) {
 
 ## Resources
 
-* [In-Depth Guide](https://github.com/angular-ui/ui-router/wiki)
-* [API Reference](http://angular-ui.github.io/ui-router/site)
-* [Sample App](http://angular-ui.github.com/ui-router/sample/) ([Source](https://github.com/angular-ui/ui-router/tree/gh-pages/sample))
+* [자세한 가이드](https://github.com/angular-ui/ui-router/wiki)
+* [API 레퍼런스](http://angular-ui.github.io/ui-router/site)
+* [샘플 앱](http://angular-ui.github.com/ui-router/sample/) ([소스](https://github.com/angular-ui/ui-router/tree/gh-pages/sample))
 * [FAQ](https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions)
-* [Slides comparing ngRoute to ui-router](http://slid.es/timkindberg/ui-router#/)
+* [ngRoute와 ui-router의 비교 슬라이드](http://slid.es/timkindberg/ui-router#/)
 * [UI-Router Extras / Addons](http://christopherthielen.github.io/ui-router-extras/#/home) (@christopherthielen)
  
 ### Videos
@@ -252,7 +252,7 @@ myApp.config(function($stateProvider) {
 다음으로, 문제를 간략하게 설명하는 [새로운 이슈를 생성](https://github.com/angular-ui/ui-router/issues/new)하고, 
 문제를 발생시키는 상황 같은 백그라운드를 약간 제공합니다. 잊지 말고 생성한 plunkr의 링크를 포함합니다.
 
-**Note**: 
+**Note**: 만약
 If you're unsure how a feature is used, or are encountering some unexpected behavior that you aren't sure
 is a bug, it's best to talk it out in the
 [Google Group](https://groups.google.com/forum/#!categories/angular-ui/router) or on
@@ -264,34 +264,35 @@ Please keep in mind that the issue tracker is for *issues*. Please do *not* post
 
 ## Contribute
 
-**(1)** See the **[Developing](#developing)** section below, to get the development version of UI-Router up and running on your local machine.
+**(1)** 당신의 로컬 머신에서 UI-Router의 개발버전을 올리고 실행하기에 대해서는, 아래의 **[Developing](#developing)** 섹션을 보라.
 
-**(2)** Check out the [roadmap](https://github.com/angular-ui/ui-router/issues/milestones) to see where the project is headed, and if your feature idea fits with where we're headed.
+**(2)** 프로젝트의 방향을 보고, 당신의 주요한 계획을 우리의 방향과 맞추는 것에 대해서는 [roadmap](https://github.com/angular-ui/ui-router/issues/milestones)를 확인하라.
 
-**(3)** If you're not sure, [open an RFC](https://github.com/angular-ui/ui-router/issues/new?title=RFC:%20My%20idea) to get some feedback on your idea.
+**(3)** 만약 당신이 확실하지 않다면, 당신의 아이디어에 대한 피드백을 얻기 위해 [RFC](https://github.com/angular-ui/ui-router/issues/new?title=RFC:%20My%20idea)를 열어보라.
 
-**(4)** Finally, commit some code and open a pull request. Code & commits should abide by the following rules:
+**(4)** 마지막으로, 코드를 커밋하고 요청하라. 다음의 규칙을 따라 코드와 커밋은 유지될 것이다:
 
-- *Always* have test coverage for new features (or regression tests for bug fixes), and *never* break existing tests
+- *항상* 새로운 특징을 위한 테스트 커
+버리지(나 버그 수정을 위한 역행 테스트)를 갖고, 기존의 테스트를 *절대* 망가뜨리지 않는다
 - Commits should represent one logical change each; if a feature goes through multiple iterations, squash your commits down to one
 - Make sure to follow the [Angular commit message format](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit-message-format) so your change will appear in the changelog of the next release.
-- Changes should always respect the coding style of the project
+- 변경은 항상 프로젝트의 코딩 스타일을 존중해야 한다
 
 
 
 ## Developing
 
-UI-Router uses <code>grunt >= 0.4.x</code>. Make sure to upgrade your environment and read the
-[Migration Guide](http://gruntjs.com/upgrading-from-0.3-to-0.4).
+UI-Router는 <code>grunt >= 0.4.x</code>을 사용한다. 당신의 환경을 업그레이드를 확실하게 하려면 
+[Migration Guide](http://gruntjs.com/upgrading-from-0.3-to-0.4)를 읽어 보라.
 
-Dependencies for building from source and running tests:
+소스에서 빌드할때의 종속성과 테스트 실행:
 
 * [grunt-cli](https://github.com/gruntjs/grunt-cli) - run: `$ npm install -g grunt-cli`
-* Then, install the development dependencies by running `$ npm install` from the project directory
+* 그런 다음, 프로젝트 디렉토리에서 `$ npm install`를 실행하여 개발환경을 인스톨한다.
 
-There are a number of targets in the gruntfile that are used to generating different builds:
+gruntfile에는 다른 빌드를 생성하기 위한 여려가지 타겟이 있다.
 
-* `grunt`: Perform a normal build, runs jshint and karma tests
-* `grunt build`: Perform a normal build
-* `grunt dist`: Perform a clean build and generate documentation
-* `grunt dev`: Run dev server (sample app) and watch for changes, builds and runs karma tests on changes.
+* `grunt`: 일반적인 빌드를 수행하며, jshint와 krfma 테스트를 실행한다.
+* `grunt build`: 일반적인 빌드를 수행한다.
+* `grunt dist`: 클린 빌드를 수행하고 문서를 생성한다.
+* `grunt dev`: (샘플 앱)개발 서버를 실행하고 변경을 감시하고, 변경에 따라 빌드와 karma 테스트를 실행한다. 

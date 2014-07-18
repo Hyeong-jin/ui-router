@@ -2,7 +2,7 @@ angular.module('uiRouterSample.contacts.service', [
 
 ])
 
-// A RESTful factory for retreiving contacts from 'contacts.json'
+// 'contacts.json'에서 contacts를 조회하기 위한 RESTful 팩토리
 .factory('contacts', ['$http', function ($http, utils) {
   var path = 'assets/contacts.json';
   var contacts = $http.get(path).then(function (resp) {

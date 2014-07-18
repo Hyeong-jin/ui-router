@@ -1,76 +1,74 @@
 <!doctype html>
-<!-- Our uiRouterSample module defined here -->
+<!-- 우리의 uiRouterSample 모듈을 여기에 정의한다 -->
 <html lang="en" ng-app="uiRouterSample">
   <head>
     <meta charset="utf-8">
 
-    <!-- using twitter bootstrap, but of course -->
+    <!-- 트위터의 부트스트랩 사용, 그러나 모두 사용하는 것은 물론 아니다 using twitter bootstrap, but of course -->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap.min.css">
-    <!-- styles for ng-animate are located here -->
+    <!-- ng-animate를 위한 스타일을 여기에 위치시킨다 -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-    <!-- Include both angular.js and angular-ui-router.js-->
+    <!-- angular.js 와 angular-ui-router.js를 모두 포함한다 -->
     <script src="../lib/angular-1.2.14/angular.js"></script>
     <script src="../lib/angular-1.2.14/angular-animate.js"></script>
     <script src="../release/angular-ui-router.js"></script>
 
-    <!-- app.js declares the uiRouterSample module and adds items to $rootScope, and defines
-         the "home" and "about" states
+    <!-- app.js는 uiRouterSample 모듈을 정의하고 $rootScope에 아이템을 추가하고, 그리고 
+         "home"과 "about" 스테이트를 정의한다
     -->
     <script src="app/app.js"></script>
 
-    <!-- contacts.js declares the uiRouterSample.contacts module, and adds a number of contact
-         related states 
+    <!-- contracts.js는 uiRouterSample.contracts 모듈을 정의하고, 상태와 관련된 몇개의 
+         콘트랙트를 추가한다
     -->
     <script src="app/contacts/contacts.js"></script>
 
-    <!-- contacts-service.js, and utils-service.js define services for use by the contacts 
-         module.
+    <!-- contacts-service.js, 와 utils-service.js 는 컨트랙트 모듈을 이용하여 사용할 서비스를 정의한다.
     -->
     <script src="app/contacts/contacts-service.js"></script>
     <script src="common/utils/utils-service.js"></script>
 
-    <!-- could easily use a custom property of the state here instead of 'name' -->
+    <!-- 'name' 대신에 스테이트의 사용자 정의 속성을 쉽게 사용할 수 있다. -->
     <title ng-bind="$state.current.name + ' - ui-router'">ui-router</title>
   </head>
   <body>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner"><div class="container">
 
-        <!-- ui-sref is a great directive for linking a state location with an anchor link.
-             You should almost always use ui-sref instead of href on your links when you want
-             then to navigate to a state. When this link is clicked it will take the application
-             to the 'home' state. Behind the scenes the directive also adds the correct href attr
-             and url. -->
+        <!-- ui-sref는 앵커 링크와 스테이트의 로케이션을 연결하기 위한 특별한 디렉티브이다.
+             당신은 스테이트를 네비게이트할 때 링크에 거의 항상 ui-sref를 href 대신 사용해야 한다.
+             이 링크가 클릭될 때 애플리케이션의 'home' 스테이트를 취한다.
+             스크린의 뒤에서 디렉티브는 또한 정확한 href 속성과 url을 추가한다. -->
         <a class="brand" ui-sref="home">ui-router</a>
         <ul class="nav">
 
-        <!-- Here you can see ui-sref in action again. Also notice the use of $state.includes, which
-             will set the links to 'active' if, for example on the first link, 'contacts' or any of
-             its descendant states are activated. -->
+        <!-- 여기서 우리는 ui-sref를 다시 보게된다. 또한 $state.includes의 사용을 주목하라. 
+             이것은 예를 들어 첫 번째 링크에서, 'contacts'나 이것의 하위 상태가 활성화되면 
+             링크를 'active'로 설정할 것이다.-->
           <li ng-class="{active: $state.includes('contacts')}"><a ui-sref="contacts.list">Contacts</a></li>
           <li ui-sref-active="active"><a ui-sref="about">About</a></li>
         </ul>
 
-        <!-- Here is a named ui-view. ui-views don't have to be named, but we'll be populate this
-             on from various different child states and we want a name to help us target. -->
+        <!-- 여기에 명명된 ui-view가 있다. ui-view는 꼭 이름을 붙이지 않아도 되지만, 
+             그러나 우리는 많은 다른 하위 스테이트의 이름을 지을 것이다. 
+             그리고 우리는 목표를 정하는데 도움이 될 이름을 원한다.->
         <p ui-view="hint" class="navbar-text pull-right"></p>
       </div></div>
     </div>
 
-    <!-- Here is the main ui-view (unnamed) and will be populated by its immediate children's templates
-         unless otherwise explicitly named views are targeted. It's also employing ng-animate. -->
+    <!-- 여기에 (명명되지 않은) 메인 ui-view가 있다. 명시적으로 명명된 뷰를 타겟으로 하지 않는 한, 즉시 하위의 템플릿으로 채워집니다.
+         또한 이것은 ng-animate를 사용한다 -->
     <div ui-view class="container slide" style="padding-top: 80px;"></div>
-
 
     <hr>
     <pre>
-      <!-- Here's some values to keep an eye on in the sample in order to understand $state and $stateParams -->
+      <!-- 여기에 샘플에서 $state와 $stateParam의 이해를 위한 몇 가지 값이 있다. -->
       $state = {{$state.current.name}}
       $stateParams = {{$stateParams}}
       $state full url = {{ $state.$current.url.source }}
-      <!-- $state.$current is not a public api, we are using it to
-           display the full url for learning purposes-->
+      <!-- $state.$current는 퍼블릭 api가 아니며, 배우기 위한 목적으로 
+           전체 url을 보여주기 위해 사용합니다.-->
     </pre>
   </body>
 </html>

@@ -5,22 +5,22 @@
         <li ng-class="{ active: $state.includes('contacts.list') }"><a ui-sref="contacts.list">All Contacts</a></li>
         <li class="nav-header">Top Contacts</li>
 
-        <!-- This <li> will only add the 'active' class if 'contacts.detail' or its descendants are active
-             AND if it is the link for the active contact (aka contactId) -->
+        <!-- 이 <li>는 'contacts.detail'나 이것의 의존성이 활성화되고 
+             (contactId로 알고 있는)활성화된 contact를 위한 링크일 때만 'active' 클래스를 추가할 것이다. -->
         <li ng-repeat="contact in contacts | limitTo:2" ui-sref-active="active">
 
-          <!-- Here's a ui-sref that is also providing necessary parameters -->
+          <!-- 여기에 필요한 인자를 제공하는 ui-sref가 있다. -->
           <a ui-sref="contacts.detail({contactId:contact.id})">{{contact.name}}</a>
         </li>
       </ul>
       <hr>
       <button class="btn" ng-click="goToRandom()">Show random contact</button>
 
-      <!-- Another named view -->
+      <!-- 다른 명명된 뷰 -->
       <div ui-view="menuTip" class="slide"></div>
     </div>
   </div>
 
-  <!-- Our unnamed main ui-view for this template -->
+  <!-- 이 템플릿을 위해 명명되지 않은 기본 ui-view -->
   <div ui-view class="span9 slide"></div>
 </div>
