@@ -5,7 +5,7 @@
 **[Download 0.2.10](http://angular-ui.github.io/ui-router/release/angular-ui-router.js)** (or **[Minified](http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js)**) **|**
 **[Guide](https://github.com/angular-ui/ui-router/wiki) |**
 **[API](http://angular-ui.github.io/ui-router/site) |**
-**[Sample](http://angular-ui.github.com/ui-router/sample/) ([Src](https://github.com/angular-ui/ui-router/tree/gh-pages/sample)) |**
+**[Sample](http://angular-ui.github.com/ui-router/sample/) ([Src](https://github.com/Hyeong-jin/ui-router/tree/master/sample)) |**
 **[FAQ](https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions) |**
 **[Resources](#resources) |**
 **[Report an Issue](#report-an-issue) |**
@@ -232,7 +232,7 @@ myApp.config(function($stateProvider) {
 
 * [자세한 가이드](https://github.com/angular-ui/ui-router/wiki)
 * [API 레퍼런스](http://angular-ui.github.io/ui-router/site)
-* [샘플 앱](http://angular-ui.github.com/ui-router/sample/) ([소스](https://github.com/angular-ui/ui-router/tree/gh-pages/sample))
+* [샘플 앱](http://angular-ui.github.com/ui-router/sample/) ([소스](https://github.com/Hyeong-jin/ui-router/tree/master/sample))
 * [FAQ](https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions)
 * [ngRoute와 ui-router의 비교 슬라이드](http://slid.es/timkindberg/ui-router#/)
 * [UI-Router Extras / Addons](http://christopherthielen.github.io/ui-router-extras/#/home) (@christopherthielen)
