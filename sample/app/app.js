@@ -11,7 +11,7 @@ angular.module('uiRouterSample', [
   [          '$rootScope', '$state', '$stateParams',
     function ($rootScope,   $state,   $stateParams) {
 	
-	// $rootScope에 $state와 $stateParam의 참조를 추가하기에 매우 편리하다.
+    // $rootScope에 $state와 $stateParam의 참조를 추가하기에 매우 편리하다.
     // 그리하여 당신은 당신의 애플리케이션의 어떤 스코프에서든 그들에 접근할 수 있다. 
     // 예를 들어, <li ng-class="{ active: $state.includes('contacts.list') }"> 는
     // 'contacts.list'나 의존성 중 하나가 활성화 되었을 때 언제나 <li>를 활성화한다. 
